@@ -12,16 +12,42 @@ namespace TextRPG
         public string Species { get; }
         public int BaseHitPoints { get; }
         public int CurrentHitPoints { get; set; }
-        
+        public int BaseIntelligence { get; }
+        public int CurrentIntelligence { get; set; }
+        public int BaseWisdom { get; }
+        public int CurrentWisdom { get; set; }
+        public int BaseCharisma { get; }
+        public int CurrentCharisma { get; set; }
+        public int BaseStrength { get; }
+        public int CurrentStrength { get; set; }
+        public int BaseDexterity { get; }
+        public int CurrentDexterity { get; set; }
+        public int BaseConstitution { get; }
+        public int CurrentConstitution { get; set; }
+
         private static int idSeed = 0;
 
 
-        public Creature(string species, int basehitPoints)
+        public Creature(string species, int basehitPoints, 
+            int baseInt, int baseWis, int baseCha, 
+            int baseStr, int baseDex, int baseCon)
         {
             Species = species;
             ID = idSeed++;
             BaseHitPoints = basehitPoints;
             CurrentHitPoints = basehitPoints;
+            BaseIntelligence = baseInt;
+            CurrentIntelligence = baseInt;
+            BaseWisdom = baseWis;
+            CurrentWisdom = baseWis;
+            BaseCharisma = baseCha;
+            BaseStrength = baseStr;
+            CurrentStrength = baseStr;
+            BaseDexterity = baseDex;
+            CurrentDexterity = baseDex;
+            BaseConstitution = baseCon;
+            CurrentConstitution = baseCon;
+            
         }
 
         public void TakeDamage(int damage)
