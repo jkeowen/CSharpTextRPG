@@ -7,12 +7,14 @@ namespace TextRPG
     {
         static void Main(string[] args)
         {
-            var creature1 = new Creature("test", 59);
+            var creature1 = new Creature("test", 100);
             Console.WriteLine(creature1.CurrentHitPoints);
-            creature1.TakeDamage(-6);
+            creature1.TakeDamage(20);
             Console.WriteLine(creature1.CurrentHitPoints);
-           // creature1.Heal(100);
-            //Console.WriteLine(creature1.HitPoints);
+            Console.WriteLine(creature1.BaseHitPoints);
+            creature1.Heal(20);
+            Console.WriteLine(creature1.CurrentHitPoints);
+            Console.WriteLine(creature1.BaseHitPoints); 
         }
     }
 }

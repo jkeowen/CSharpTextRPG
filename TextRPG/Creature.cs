@@ -43,13 +43,24 @@ namespace TextRPG
             }
         }
 
-       /* public void Heal(int healAmount)
+        public void Heal(int healAmount)
         {
-            if(healAmount < HitPoints)
+          if(healAmount > 0) 
             {
-                HitPoints += healAmount;
+                if(healAmount > BaseHitPoints)
+                {
+                    CurrentHitPoints = BaseHitPoints;
+                }
+                else
+                {
+                    CurrentHitPoints += healAmount;
+                }
             }
-        }*/
+            else
+            {
+                Console.WriteLine("Cannot heal negative amount!");
+            }
+        }
 
        
     }
